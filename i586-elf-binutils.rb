@@ -13,7 +13,7 @@ class I586ElfBinutils < Formula
     ENV['LD'] = '/usr/local/opt/gcc/bin/gcc-5'
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=x86_64-elf','--disable-werror',
+      system '../configure', '--disable-nls', '--target=i586-elf','--disable-werror',
                              '--enable-gold=yes',
                              "--prefix=#{prefix}"
       system 'make all'
