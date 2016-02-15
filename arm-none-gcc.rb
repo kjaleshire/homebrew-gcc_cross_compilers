@@ -1,6 +1,6 @@
 require 'formula'
 
-class ArmElfGcc < Formula
+class ArmNoneGcc < Formula
   homepage 'http://gcc.gnu.org'
   url "http://ftpmirror.gnu.org/gcc/gcc-5.3.0/gcc-5.3.0.tar.bz2"
   mirror "https://ftp.gnu.org/gnu/gcc/gcc-5.3.0/gcc-5.3.0.tar.bz2"

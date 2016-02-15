@@ -1,6 +1,6 @@
 require 'formula'
 
-class ArmElfBinutils < Formula
+class ArmNoneBinutils < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftp.gnu.org/gnu/binutils/binutils-2.26.tar.gz'
   sha256 '9615feddaeedc214d1a1ecd77b6697449c952eab69d79ab2125ea050e944bcc1'
