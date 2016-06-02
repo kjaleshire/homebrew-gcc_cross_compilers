@@ -1,9 +1,9 @@
 require 'formula'
 
-class X8664ElfBinutils < Formula
+class Aarch64NoneBinutils < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftp.gnu.org/gnu/binutils/binutils-2.26.tar.gz'
-  sha1 'f10c64e92d9c72ee428df3feaf349c4ecb2493bd'
+  sha256 '9615feddaeedc214d1a1ecd77b6697449c952eab69d79ab2125ea050e944bcc1'
 
   depends_on 'gcc' => :build
   def install
@@ -13,13 +13,11 @@ class X8664ElfBinutils < Formula
     ENV['LD'] = '/usr/local/opt/gcc/bin/gcc-5'
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=x86_64-elf','--disable-werror',
+      system '../configure', '--disable-nls', '--target=aarch64-none-elf','--disable-werror',
                              '--enable-gold=yes',
                              "--prefix=#{prefix}"
       system 'make all'
       system 'make install'
-
     end
   end
-
 end
