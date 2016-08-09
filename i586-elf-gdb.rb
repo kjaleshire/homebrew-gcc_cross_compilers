@@ -3,7 +3,7 @@ require 'formula'
 class I586ElfGdb < Formula
   homepage 'http://gcc.gnu.org'
   url 'http://ftp.gnu.org/gnu/gdb/gdb-7.9.tar.xz'
-  sha1 '1dabff2168bd8fe3cadf9386e47a47c527ea99ba'
+  sha256 '9b315651a16528f7af8c7d8284699fb0c965df316cc7339bb0b7bae335848392'
 
   depends_on 'i586-elf-binutils'
   depends_on 'i586-elf-gcc'
