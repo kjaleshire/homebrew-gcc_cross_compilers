@@ -12,7 +12,7 @@ class ArmNoneGcc < Formula
   depends_on 'arm-none-binutils'
 
   def install
-    binutils = Formula.factory 'arm-none-binutils'
+    binutils = Formulary.factory 'arm-none-binutils'
 
     ENV['CC'] = '/usr/local/opt/gcc/bin/gcc-6'
     ENV['CXX'] = '/usr/local/opt/gcc/bin/g++-6'

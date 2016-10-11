@@ -12,7 +12,7 @@ class Armv7NoneGcc < Formula
   depends_on 'armv7-none-binutils'
 
   def install
-    binutils = Formula.factory 'armv7-none-binutils'
+    binutils = Formulary.factory 'armv7-none-binutils'
 
     ENV['CC'] = '/usr/local/opt/gcc/bin/gcc-6'
     ENV['CXX'] = '/usr/local/opt/gcc/bin/g++-6'

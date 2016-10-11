@@ -1,9 +1,10 @@
 require 'formula'
 
-class I586ElfBinutils < Formula
+class I386ElfBinutils < Formula
   homepage 'http://gcc.gnu.org'
-  url 'http://ftp.gnu.org/gnu/binutils/binutils-2.26.tar.gz'
-  sha256 '9615feddaeedc214d1a1ecd77b6697449c952eab69d79ab2125ea050e944bcc1'
+  url "https://ftpmirror.gnu.org/binutils/binutils-2.27.tar.gz"
+  mirror 'http://ftp.gnu.org/gnu/binutils/binutils-2.27.tar.gz'
+  sha256 '26253bf0f360ceeba1d9ab6965c57c6a48a01a8343382130d1ed47c468a3094f'
 
   depends_on 'gcc' => :build
   def install
@@ -13,7 +14,7 @@ class I586ElfBinutils < Formula
     ENV['LD'] = '/usr/local/opt/gcc/bin/gcc-6'
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=i586-elf','--disable-werror',
+      system '../configure', '--disable-nls', '--target=i386-elf','--disable-werror',
                              '--enable-gold=yes',
                              "--prefix=#{prefix}"
       system 'make all'

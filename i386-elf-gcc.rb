@@ -1,19 +1,19 @@
 require 'formula'
 
-class I586ElfGcc < Formula
+class I386ElfGcc < Formula
   homepage 'http://gcc.gnu.org'
-  url "http://ftpmirror.gnu.org/gcc/gcc-5.2.0/gcc-5.2.0.tar.bz2"
-  mirror "https://ftp.gnu.org/gnu/gcc/gcc-5.2.0/gcc-5.2.0.tar.bz2"
-  sha256 "5f835b04b5f7dd4f4d2dc96190ec1621b8d89f2dc6f638f9f8bc1b1014ba8cad"
+  url "https://ftpmirror.gnu.org/gcc/gcc-6.2.0/gcc-6.2.0.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-6.2.0/gcc-6.2.0.tar.bz2"
+  sha256 "9944589fc722d3e66308c0ce5257788ebd7872982a718aa2516123940671b7c5"
 
   depends_on "gmp"
   depends_on "libmpc"
   depends_on "mpfr"
   depends_on "isl"
-  depends_on 'i586-elf-binutils'
+  depends_on 'i386-elf-binutils'
 
   def install
-    binutils = Formula.factory 'i586-elf-binutils'
+    binutils = Formulary.factory 'i386-elf-binutils'
 
 
     ENV['CC'] = '/usr/local/opt/gcc/bin/gcc-6'
@@ -23,14 +23,14 @@ class I586ElfGcc < Formula
     ENV['PATH'] += ":#{binutils.prefix/"bin"}"
 
     mkdir 'build' do
-      system '../configure', '--disable-nls', '--target=i586-elf',
+      system '../configure', '--disable-nls', '--target=i386-elf',
                              '--disable-werror',
                              "--prefix=#{prefix}",
                              "--enable-languages=c",
                              "--without-headers"
       system 'make all-gcc'
       system 'make install-gcc'
-      FileUtils.ln_sf binutils.prefix/"i586-elf", prefix/"i586-elf"
+      FileUtils.ln_sf binutils.prefix/"i386-elf", prefix/"i386-elf"
       system 'make all-target-libgcc'
       system 'make install-target-libgcc'
       FileUtils.rm_rf share/"man"/"man7"
